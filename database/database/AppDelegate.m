@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegate+WDAdExtension.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,44 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    __weak typeof(self) weakSelf = self;
+    [AppDelegate wd_ad_launchAdImageView:^(WDAdvertiseView *imgAdView) {
+        // 设置广告类型
+        imgAdView.getAdImageViewType(WDAdViewTypeLogo);
+        NSLog(@"******");
+
+        // 设置本地启动图片
+        //imgAdView.localAdImgName = @"qidong.gif";
+        imgAdView.imgUrl = @"http://img.zcool.cn/community/01316b5854df84a8012060c8033d89.gif";
+        // 自定义跳过按钮
+        //imgAdView.skipBtn.backgroundColor = [UIColor blackColor];
+
+        // 各种点击事件的回调
+        imgAdView.clickBlock = ^(const WDAdViewEvent event) {
+
+            ViewController *vc = [[ViewController alloc] init];
+            vc.view.backgroundColor = [UIColor whiteColor];
+
+            switch (event) {
+                case WDAdViewEventClickAD:
+                    NSLog(@"点击广告回调");
+                    [weakSelf.window.rootViewController presentViewController:vc animated:YES completion:nil];
+                    break;
+
+                case WDAdViewEventSkipAD:
+                    NSLog(@"点击跳过回调");
+                    [weakSelf.window.rootViewController presentViewController:vc animated:YES completion:nil];
+                    break;
+                case WDAdViewEventOvertimeAD:
+                    NSLog(@"倒计时完成后的回调");
+                    [weakSelf.window.rootViewController presentViewController:vc animated:YES completion:nil];
+                    break;
+                default:
+                    break;
+            }
+        };
+    }];
     return YES;
 }
 

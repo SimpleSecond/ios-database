@@ -16,7 +16,9 @@
 		66C2AB5A20172A1C006433CD /* Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66C2AB5820172A1C006433CD /* Project.xcdatamodeld */; };
 		66F1F5AD2019781E006807BB /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F1F5AB2019781E006807BB /* Person+CoreDataProperties.m */; };
 		66F1F5B020199484006807BB /* WDCoreDataStackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F1F5AF20199484006807BB /* WDCoreDataStackManager.m */; };
-		F1E0821206A6DB0EC1495601 /* libPods-database.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E92717C4F4618EBBF8AE107 /* libPods-database.a */; };
+		66F1F5B32019D7DF006807BB /* WDAdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F1F5B22019D7DF006807BB /* WDAdvertiseView.m */; };
+		66F1F5B6201B1FD8006807BB /* AppDelegate+WDAdExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F1F5B5201B1FD8006807BB /* AppDelegate+WDAdExtension.m */; };
+		C0FFA2431050C942FD6B972C /* Pods_database.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB09A9A02AC6D595F7DBD05C /* Pods_database.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +41,12 @@
 		66F1F5AB2019781E006807BB /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataProperties.m"; sourceTree = "<group>"; };
 		66F1F5AE20199484006807BB /* WDCoreDataStackManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDCoreDataStackManager.h; sourceTree = "<group>"; };
 		66F1F5AF20199484006807BB /* WDCoreDataStackManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDCoreDataStackManager.m; sourceTree = "<group>"; };
+		66F1F5B12019D7DF006807BB /* WDAdvertiseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAdvertiseView.h; sourceTree = "<group>"; };
+		66F1F5B22019D7DF006807BB /* WDAdvertiseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAdvertiseView.m; sourceTree = "<group>"; };
+		66F1F5B4201B1FD8006807BB /* AppDelegate+WDAdExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WDAdExtension.h"; sourceTree = "<group>"; };
+		66F1F5B5201B1FD8006807BB /* AppDelegate+WDAdExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WDAdExtension.m"; sourceTree = "<group>"; };
 		6D3276ED3FD0DEA5ABEA734F /* Pods-database.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-database.debug.xcconfig"; path = "Pods/Target Support Files/Pods-database/Pods-database.debug.xcconfig"; sourceTree = "<group>"; };
-		8E92717C4F4618EBBF8AE107 /* libPods-database.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-database.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB09A9A02AC6D595F7DBD05C /* Pods_database.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_database.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1E0821206A6DB0EC1495601 /* libPods-database.a in Frameworks */,
+				C0FFA2431050C942FD6B972C /* Pods_database.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +92,10 @@
 				66C2AB4320172A01006433CD /* AppDelegate.m */,
 				66C2AB4520172A01006433CD /* ViewController.h */,
 				66C2AB4620172A01006433CD /* ViewController.m */,
+				66F1F5B12019D7DF006807BB /* WDAdvertiseView.h */,
+				66F1F5B22019D7DF006807BB /* WDAdvertiseView.m */,
+				66F1F5B4201B1FD8006807BB /* AppDelegate+WDAdExtension.h */,
+				66F1F5B5201B1FD8006807BB /* AppDelegate+WDAdExtension.m */,
 				66C2AB4820172A01006433CD /* Main.storyboard */,
 				66C2AB4B20172A01006433CD /* Assets.xcassets */,
 				66C2AB4D20172A01006433CD /* LaunchScreen.storyboard */,
@@ -100,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				66CF1B6E201759E30047B9EB /* libz.tbd */,
-				8E92717C4F4618EBBF8AE107 /* libPods-database.a */,
+				EB09A9A02AC6D595F7DBD05C /* Pods_database.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,11 +234,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-database/Pods-database-frameworks.sh",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -244,8 +256,10 @@
 			files = (
 				66C2AB4720172A01006433CD /* ViewController.m in Sources */,
 				66C2AB5220172A01006433CD /* main.m in Sources */,
+				66F1F5B6201B1FD8006807BB /* AppDelegate+WDAdExtension.m in Sources */,
 				66C2AB4420172A01006433CD /* AppDelegate.m in Sources */,
 				66C2AB5A20172A1C006433CD /* Project.xcdatamodeld in Sources */,
+				66F1F5B32019D7DF006807BB /* WDAdvertiseView.m in Sources */,
 				66F1F5B020199484006807BB /* WDCoreDataStackManager.m in Sources */,
 				66F1F5AD2019781E006807BB /* Person+CoreDataProperties.m in Sources */,
 			);
@@ -381,17 +395,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D3276ED3FD0DEA5ABEA734F /* Pods-database.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z5AXWS32SW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = database/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wdy-test.database";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -402,17 +417,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B9C5592117DF80A12DEA314 /* Pods-database.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z5AXWS32SW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = database/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wdy-test.database";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
